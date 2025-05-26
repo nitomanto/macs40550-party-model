@@ -110,7 +110,9 @@ class PartyModel(Model):
         return self.num_dancing_steps
         
     def step(self):
-        self.agents.shuffle_do("step")
-        self.datacollector.collect(self)
-        if (number_dancing(self)==0) and (number_kaput(self) > 2):
-            self.running = False
+        self.agents.shuffle_do("step") 
+        self.datacollector.collect(self)           
+        
+        #if number_dancing(self)==0:
+        #if number_kaput(self) > 2:
+        #        self.running = False
