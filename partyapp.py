@@ -43,7 +43,10 @@ model_params = {
     "network_type": {
         "type": "Select",
         "value": "florentine",
-        "values": ["florentine", "lesmis", 'southernwomen', 'karateclub'],
+        "values": ["florentine", "lesmis", 'southernwomen', 'karateclub',
+                   'densegnm',
+                   'barabasi',
+                   'newmanwattsstrogatz'],
         "label": "Network Type",
     },
     "energy": Slider(

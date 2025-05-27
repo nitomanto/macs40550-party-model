@@ -53,6 +53,12 @@ class PartyModel(Model):
             self.G = nx.davis_southern_women_graph()
         elif self.network_type=="karateclub":
             self.G = nx.karate_club_graph()
+        elif self.network_type=="densegnm":
+            self.G = nx.dense_gnm_random_graph(15, 45)
+        elif self.network_type=="barabasi":
+            self.G = nx.dual_barabasi_albert_graph(15, 3, 2, 0.5)
+        elif self.network_type=="newmanwattsstrogatz":
+            self.G = nx.newman_watts_strogatz_graph(15, 5, 0.50)
         else:
             self.G = nx.florentine_families_graph()
 
