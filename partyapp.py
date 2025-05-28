@@ -44,11 +44,23 @@ model_params = {
         "type": "Select",
         "value": "florentine",
         "values": ["florentine", "lesmis", 'southernwomen', 'karateclub',
-                   'densegnm',
-                   'barabasi',
-                   'newmanwattsstrogatz'],
+                   'wattsstrogatz',],
         "label": "Network Type",
     },
+    "k":{
+        "type": "Select",
+        "value": 2,
+        "values": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        "label": "Watts-Strogatz k value"
+    },
+    "p": Slider(
+            label="Watts-Strogatz p value",
+            value=0.01,
+            min=0.01,
+            max=0.1,
+            step=0.01
+        )
+    ,
     "energy": Slider(
         label="Agent Energy",
         value=10,

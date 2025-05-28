@@ -5,13 +5,15 @@ import numpy as np
 from partymodel import PartyModel
 import json
 
-params = {'neighbor_dance_thres':0.5,
-            'alcohol_dance_thres':2,
-            'energy':10,
-            'alcohol_prop':[0, 0.2, 0.4, 0.6, 0.8],
+params = {'neighbor_dance_thres':np.linspace(0.1, 1, 10),
+            'alcohol_dance_thres': range(2, 5),
+            'energy':15,
+            'alcohol_prop':[0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
             'extro_floor':0,
             'extro_ceiling':1,
-            'network_type':"southernwomen",
+            'k': range(2,16),
+            'p': np.arange(0.01, 0.11, 0.01),
+            'network_type':"wattsstrogatz",
             'seed':[0,2,4,6,8,10]}
 
 results = mesa.batch_run(

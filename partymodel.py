@@ -33,6 +33,8 @@ class PartyModel(Model):
                  extro_floor=0,
                  extro_ceiling=1,
                  network_type="florentine",
+                 k=2,
+                 p=0.01,
                  seed=None):
         #super init random seed
         super().__init__(seed=seed)
@@ -53,12 +55,8 @@ class PartyModel(Model):
             self.G = nx.davis_southern_women_graph()
         elif self.network_type=="karateclub":
             self.G = nx.karate_club_graph()
-        elif self.network_type=="densegnm":
-            self.G = nx.dense_gnm_random_graph(15, 45)
-        elif self.network_type=="barabasi":
-            self.G = nx.dual_barabasi_albert_graph(15, 3, 2, 0.5)
-        elif self.network_type=="newmanwattsstrogatz":
-            self.G = nx.newman_watts_strogatz_graph(15, 5, 0.50)
+        elif self.network_type=="wattsstrogatz":
+            self.G = nx.watts_strogatz_graph(25, k, p)
         else:
             self.G = nx.florentine_families_graph()
 
