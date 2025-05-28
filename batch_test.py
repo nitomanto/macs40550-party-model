@@ -16,14 +16,18 @@ params = {'neighbor_dance_thres':np.linspace(0.1, 1, 10),
             'network_type':"wattsstrogatz",
             'seed':[0,2,4,6,8,10]}
 
-results = mesa.batch_run(
-PartyModel,
-params,
-iterations = 1,
-max_steps = 100,
-#data_collection_period = 1,
-number_processes = 1
-)
+if __name__=="__main__":
 
-with open('batch_test.json', 'w') as f:
-    json.dump(results, f)
+    results = mesa.batch_run(
+    PartyModel,
+    params,
+    iterations = 1,
+    max_steps = 100,
+    #data_collection_period = 1,
+    number_processes = 20
+    )
+
+    with open('batch_test_midway.json', 'w') as f:
+        json.dump(results, f)
+
+    print('all done!')
