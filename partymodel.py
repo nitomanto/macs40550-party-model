@@ -117,6 +117,10 @@ class PartyModel(Model):
         self.agents.shuffle_do("step") 
         self.datacollector.collect(self)           
         
+        # following lines were written as an attempt to implement a
+        # stop condition for batch runs. This was unsuccessful, hence it
+        # being commented out
+
         #if number_dancing(self)==0:
         #if number_kaput(self) > 2:
         #        self.running = False
